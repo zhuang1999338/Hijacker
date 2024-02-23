@@ -297,7 +297,7 @@ class Airodump{
                 beacons = Integer.parseInt(buffer.substring(23, 32).replace(" ", ""));
                 data = Integer.parseInt(buffer.substring(32, 41).replace(" ", ""));
                 ivs = Integer.parseInt(buffer.substring(41, 46).replace(" ", ""));
-                ch = Integer.parseInt(buffer.substring(48, 50).replace(" ", ""));
+                ch = Integer.parseInt(buffer.substring(47, 50).replace(" ", ""));
                 enc = buffer.substring(57, 61).replace(" ", "");
                 cipher = buffer.substring(62, 66);
                 auth = buffer.substring(69, 73).replace(" ", "");
