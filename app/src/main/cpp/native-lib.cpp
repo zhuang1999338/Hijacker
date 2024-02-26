@@ -92,7 +92,7 @@ extern "C" jint Java_com_hijacker_Airodump_main(JNIEnv* env, jclass obj, jstring
             env->CallStaticVoidMethod(jclass1, method_st, s1, s2, s3, pwr, lost, frames);
         }else{
             //ap
-            char bssid[18], pwr_c[6], beacons_c[10], data_c[10], ivs_c[6], ch_c[3], enc[5], cipher[5], auth[5], essid[50];
+            char bssid[18], pwr_c[6], beacons_c[10], data_c[10], ivs_c[6], ch_c[4], enc[5], cipher[5], auth[5], essid[50];
             int pwr, beacons, data, ivs, ch;
 
             strncpy(bssid, buffer+1, 17);
@@ -118,8 +118,8 @@ extern "C" jint Java_com_hijacker_Airodump_main(JNIEnv* env, jclass obj, jstring
             ivs_c[5]='\0';
             ivs = atoi(ivs_c);
 
-            strncpy(ch_c, buffer+48, 2);
-            ch_c[2]='\0';
+            strncpy(ch_c, buffer+47, 3);
+            ch_c[3]='\0';
             ch = atoi(ch_c);
 
             strncpy(enc, buffer+57, 4);
